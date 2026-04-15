@@ -1,0 +1,56 @@
+<header class="header">
+  <div class="header__container">
+    <a class="header__logo" routerLink="/">
+      ServiYa
+    </a>
+
+    <button
+      class="header__menu-button"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen"
+      aria-label="Abrir menú de navegación"
+    >
+      ☰
+    </button>
+
+    <nav class="header__nav" [class.header__nav--open]="menuOpen">
+      <a
+        class="header__link"
+        routerLink="/"
+        routerLinkActive="header__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+      >
+        Inicio
+      </a>
+
+      <a
+        class="header__link"
+        routerLink="/servicios"
+        routerLinkActive="header__link--active"
+        (click)="closeMenu()"
+      >
+        Servicios
+      </a>
+
+      <a
+        class="header__link"
+        routerLink="/contacto"
+        routerLinkActive="header__link--active"
+        (click)="closeMenu()"
+      >
+        Contacto
+      </a>
+
+      <a
+  class="header__link"
+  routerLink="/favoritos"
+  routerLinkActive="header__link--active"
+  (click)="closeMenu()"
+>
+  Favoritos
+</a>
+    </nav>
+  </div>
+</header>
